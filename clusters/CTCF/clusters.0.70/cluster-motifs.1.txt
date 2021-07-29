@@ -1,0 +1,2 @@
+motifs/jangrau/PBM.QNZS/CTCF.NA@PBM.ME@queasy-aquamarine-horse@Halle.Dimont@Motif_1_astrained.ppm	GGGGCGGTTGAG	+	12	0	0	1
+motifs/jangrau/PBM.SDQN/CTCF.NA@PBM.ME@bluesy-corn-whale@Halle.Dimont@Motif_1_astrained.ppm	GCGCGGGTG	+	9	1	2	1

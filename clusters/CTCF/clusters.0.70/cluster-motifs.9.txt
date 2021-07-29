@@ -1,0 +1,2 @@
+motifs/jangrau/PBM.QNZS/CTCF.NA@PBM.ME@queasy-aquamarine-horse@Halle.Dimont@Motif_2_astrained.ppm	TATTCTGCAA	+	10	0	0	9
+motifs/jangrau/PBM.QNZS/CTCF.NA@PBM.ME@queasy-aquamarine-horse@Halle.Dimont@Motif_2_frompredictions.pcm	TATTCTGCAA	+	10	0	0	9

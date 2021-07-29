@@ -1,0 +1,8 @@
+motifs/Hughes/Autoseed_SmileSeq/CTCF.NA@SMS@snappy-grey-markhor@AJolma.Autoseed@Multinom1_OneHitAllReads_Seed_NCGCCCCCTNNNGN.ppm	ATATTTTTGCTTAA	+	14	3	0	11
+motifs/VIGG/SMS/CTCF.NA@SMS@snappy-grey-markhor@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=500.pcm	TGCATATTTTTGCACAA	-	17	0	0	11
+motifs/VIGG/SMS/CTCF.NA@SMS@snappy-grey-markhor@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=1000.pcm	ATATTTTTGCACAA	+	14	3	0	11
+motifs/Hughes/SMSPublished/Meme/CTCF.NA@SMS@snappy-grey-markhor@Hughes.Meme@meme1.ppm	CATATTTTTGC	-	11	2	4	11
+motifs/jangrau/SMS.published/CTCF.NA@SMS@snappy-grey-markhor@Halle.Dimont@Motif_1_posneg_astrained.ppm	ATATTTTTGC	+	10	3	4	11
+motifs/Hughes/SMSPublished/Homer/CTCF.NA@SMS@snappy-grey-markhor@Hughes.Homer@homer1.ppm	CATATTTTTG	-	10	2	5	11
+motifs/Hughes/SMSPublished/Streme/CTCF.NA@SMS@snappy-grey-markhor@Hughes.Streme@streme1.ppm	GCATATTTTTG	-	11	1	5	11
+motifs/jangrau/SMS.published/CTCF.NA@SMS@snappy-grey-markhor@Halle.Dimont@Motif_1_posneg_frompredictions.pcm	ATATTTTTGC	+	10	3	4	11

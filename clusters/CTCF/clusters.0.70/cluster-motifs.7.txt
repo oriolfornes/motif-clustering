@@ -1,0 +1,1 @@
+motifs/VIGG/SMS/CTCF.NA@SMS@snappy-grey-markhor@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=2000.pcm	AGTCTTT	+	7	0	0	7

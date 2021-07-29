@@ -1,0 +1,1 @@
+motifs/VIGG/PBM/CTCF.NA@PBM.ME@bluesy-corn-whale@VIGG.ChIPMunk@s_8-15_flat.pcm	CCCGCCGAGG	+	10	0	0	8

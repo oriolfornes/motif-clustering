@@ -1,0 +1,1 @@
+7	motifs/VIGG/SMS/CTCF.NA@SMS@snappy-grey-markhor@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=2000.pcm	7	1	6	1

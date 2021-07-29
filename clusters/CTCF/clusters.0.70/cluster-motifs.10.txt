@@ -1,0 +1,3 @@
+motifs/Hughes/SMSPublished/Homer/CTCF.NA@SMS@snappy-grey-markhor@Hughes.Homer@homer2.ppm	TTTTGCATAA	+	10	4	1	10
+motifs/Hughes/SMSPublished/Meme/CTCF.NA@SMS@snappy-grey-markhor@Hughes.Meme@meme3.ppm	CAGATTTTGCATAAT	+	15	0	0	10
+motifs/Hughes/SMSPublished/Streme/CTCF.NA@SMS@snappy-grey-markhor@Hughes.Streme@streme2.ppm	CTATTTTTGCAGAA	-	14	0	1	10
