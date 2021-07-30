@@ -3,6 +3,7 @@
 import argparse
 from genome_tools.plotting import pwm
 import matplotlib
+import matplotlib.font_manager
 import matplotlib.pyplot as plt
 import matplotlib.gridspec as gridspec
 import numpy as np
@@ -10,29 +11,14 @@ import os
 import pandas as pd
 from pylab import rcParams
 matplotlib.use("Agg")
+np.seterr(divide="ignore")
 rcParams["pdf.fonttype"] = 42
 rcParams["svg.fonttype"] = "none"
 
-from . import get_pwms
-
-# import sys
-# import os.path
-
-# import pandas as pd
-# import numpy as np
-# import scipy as sp
-
-# import matplotlib
-# matplotlib.use('Agg')
-
-# import matplotlib.pyplot as plt
-# import matplotlib.gridspec as gridspec
-
-# from pylab import rcParams
-# rcParams['pdf.fonttype'] = 42
-# rcParams['svg.fonttype'] = 'none'
-
-# from genome_tools.plotting import pwm
+try:
+    from . import get_pwms
+except:
+    from meme import get_pwms
 
 #-------------#
 # Functions   #
@@ -107,27 +93,14 @@ def viz_cluster(meme_file, cluster_seed, cluster_motifs, prefix=None,
         offset = m["loffset"]
         strand = m["strand"]
 
-        #ic=relative_info_content(pwm) if strand=="+" else relative_info_content(reverse_complement_pwm(pwm))
+        pwm(pwms[m["id"]].T).render(fig, ax, type="ic", xoffset=offset,
+                xlim=(0-padding, right+padding), rc=True if strand=="-" else False)
 
-        pwm(pwms[m["id"]].T).render(
-            fig, ax, type="ic", xoffset=offset, xlim=(0-padding, right+padding), rc=True if strand=="-" else False
-        )
-
-        #stackedbar(ic.T, ax, sorted=True, xoffset=offset)
         ax.axvline(s, color="black", ls='--')
         ax.axvline(e, color="black", ls='--')
 
         ax.text(0.90, 0.5, m["id"], transform=ax.transAxes, ha="left",
             va="center")
-
-        #ax.xaxis.set_visible(True)
-
-        #ax.set_xlim(0-padding, right+padding)
-        #ax.set_ylim(0, 2.25)
-        
-
-        
-        #ax.set_ylabel("Bits")
 
         [ax.spines[loc].set_color("none") for loc in ["top", "right"]]
 

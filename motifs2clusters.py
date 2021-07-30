@@ -12,7 +12,6 @@ bar_format = "{percentage:3.0f}%|{bar:20}{r_bar}"
 from jaspar2others import reformat_motif
 utils = __import__("jvierstra-py3")
 
-
 parser = argparse.ArgumentParser(
     description="reformats motifs into MEME format (one file per TF).")
 parser.add_argument("motifs_dir", type=pathlib.Path, help="motifs directory")
@@ -53,17 +52,17 @@ for tf in tqdm(sorted(tf2motifs), total=len(tf2motifs), bar_format=bar_format):
         cmd = "tomtom -dist kullback -motif-pseudo 0.1 -text -min-overlap 1" +\
             f" {meme_file} {meme_file} > {tomtom_file}"
         sp.run([cmd], shell=True, stdout=sp.DEVNULL, stderr=sp.DEVNULL)
-    clusters_file = os.path.join(tf_dir, "clusters.0.70.txt")
-    if not os.path.exists(clusters_file):
+    clusts_file = os.path.join(tf_dir, "clusters.0.70.txt")
+    if not os.path.exists(clusts_file):
         utils.hierarchical(tomtom_file, tf_dir)
-    clusters_dir = os.path.join(tf_dir, "clusters.0.70")
-    if not os.path.isdir(clusters_dir):
-        os.makedirs(clusters_dir)
-    df = pd.read_csv(clusters_file, header=0, delimiter="\t", index_col=0)
-    utils.process_clusters(meme_file, tomtom_file, clusters_file,
-        out_dir=clusters_dir)
-    for cl in df.cluster.unique():
-        cluster_seed = os.path.join(clusters_dir, f"cluster-seed.{cl}.txt")
-        cluster_motifs = os.path.join(clusters_dir, f"cluster-motifs.{cl}.txt")
-        utils.viz_cluster(meme_file, cluster_seed, cluster_motifs,
-            out_dir=clusters_dir)
+    clusts_dir = os.path.join(tf_dir, "clusters.0.70")
+    if not os.path.isdir(clusts_dir):
+        os.makedirs(clusts_dir)
+        df = pd.read_csv(clusts_file, header=0, delimiter="\t", index_col=0)
+        utils.process_clusters(meme_file, tomtom_file, clusts_file,
+            out_dir=clusts_dir)
+        for cl in df.cluster.unique():
+            clust_seed = os.path.join(clusts_dir, f"cluster-seed.{cl}.txt")
+            clust_motifs = os.path.join(clusts_dir, f"cluster-motifs.{cl}.txt")
+            utils.viz_cluster(meme_file, clust_seed, clust_motifs,
+                out_dir=clusts_dir)

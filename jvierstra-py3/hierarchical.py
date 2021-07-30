@@ -58,7 +58,8 @@ def hierarchical(tomtom_file, out_dir="./"):
         df = pd.DataFrame(cl, index=mat.index, columns=["cluster"])
         df.index.name="motifs"
 
-        df.to_csv(os.path.join(out_dir, "clusters.%0.2f.txt" % (thresh)), sep="\t", header=True)
+        df.to_csv(os.path.join(out_dir, "clusters.%0.2f.txt" % (thresh)),
+            sep="\t", header=True)
 
 def main():
 

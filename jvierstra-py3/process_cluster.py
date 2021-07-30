@@ -4,8 +4,12 @@ import argparse
 import numpy as np
 import os
 import pandas as pd
+np.seterr(divide="ignore")
 
-from . import get_pwms
+try:
+    from . import get_pwms
+except:
+    from meme import get_pwms
 
 #-------------#
 # Functions   #
@@ -70,12 +74,11 @@ def process_clusters(meme_file, tomtom_file, clusters_file, cluster=None,
 
         cl_seed_motif = cl_motifs[0]
 
-        i = (sim[0] == cl_seed_motif) & (sim[1].isin(cl_motifs))
-
-        cl_motifs_info = sim.loc[i]
+        cl_motifs_info = sim[(sim[0] == cl_seed_motif) & \
+                             (sim[1].isin(cl_motifs))].copy()
 
         # motif width
-        cl_motifs_info["w"] = cl_motifs_info[8].str.len()
+        cl_motifs_info["w"] = cl_motifs_info.loc[:,8].str.len()
 
         # cluster left offset
         left = np.min(-cl_motifs_info[2])
@@ -100,13 +103,13 @@ def process_clusters(meme_file, tomtom_file, clusters_file, cluster=None,
         total_ic = np.zeros(right)
 
         for i in range(N):
-            
+
             m = cl_motifs_info.iloc[i,:]
-            
-            w=m["w"]
-            pwm=pwms[m["id"]]
-            offset=m["loffset"]
-            strand=m["strand"]
+
+            w = m["w"]
+            pwm = pwms[m["id"]]
+            offset = m["loffset"]
+            strand = m["strand"]
 
             if strand == "-":
                 ic = relative_info_content(pwm)
