@@ -12,7 +12,9 @@ bar_format = "{percentage:3.0f}%|{bar:20}{r_bar}"
 from jaspar2others import reformat_motif
 utils = __import__("jvierstra-py3")
 
-parser = argparse.ArgumentParser(description="clusters motifs.")
+parser = argparse.ArgumentParser(
+    description="motif clustering based on Jeff Vierstra's code."
+)
 parser.add_argument("motifs_dir", type=pathlib.Path, help="motifs directory")
 parser.add_argument("--out-dir", type=pathlib.Path, default="./",
     help="output directory (default: ./)")

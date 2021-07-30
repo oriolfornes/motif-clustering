@@ -23,12 +23,12 @@ python setup.py install
 ```
 
 ## Quick start
-The script *motifs2clusters.py* clusters motifs:
+The script *motifs2clusters.py* takes as input a folder containing motifs belonging to one or more TFs and in *.pcm* and/or *.pcm* format:
 ```
 $ ./motifs2clusters.py -h
 usage: motifs2clusters.py [-h] [--out-dir OUT_DIR] motifs_dir
 
-reformats motifs into MEME format (one file per TF).
+motif clustering based on Jeff Vierstra's code
 
 positional arguments:
   motifs_dir         motifs directory
@@ -37,7 +37,7 @@ optional arguments:
   -h, --help         show this help message and exit
   --out-dir OUT_DIR  output directory (default: ./)
   ```
-It takes as input a folder containing motifs belonging to one or more TFs and in *.pcm* and/or *.pcm* format. The script outputs one folder per TF. The content of this folder is a series of intermediate files, and a subfolder called *clusters.0.70 *. This folder contains multiple files:
+It returns one folder per TF as output. The contents of such folder are a series of intermediate files (*e.g.* *motifs.meme*, *tomtom.txt*, etc.), and the subfolder *clusters.0.70 * containing multiple files:
 * *cluster-motifs.$NUM.txt* contains the members of cluster *$NUM*
 * *cluster-seed.$NUM.txt* contains the seed motif of cluster *$NUM*
 * *cluster.$NUM.pdf* provides a visualization of cluster *$NUM* in *.pdf* format
