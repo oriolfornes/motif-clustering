@@ -10,6 +10,7 @@ import numpy as np
 import os
 import pandas as pd
 from pylab import rcParams
+import re
 matplotlib.use("Agg")
 np.seterr(divide="ignore")
 rcParams["pdf.fonttype"] = 42
@@ -55,7 +56,8 @@ def viz_cluster(meme_file, cluster_seed, cluster_motifs, prefix=None,
     pwms = get_pwms(meme_file)
 
     if prefix is None:
-        prefix = os.path.splitext(os.path.basename(cluster_seed))[0]
+        m = re.search("cluster\-seed\.(\d+)\.txt", cluster_seed)
+        prefix = f"cluster.{m.group(1)}"
 
     cluster_seed = pd.read_csv(cluster_seed, delimiter="\t", header=None)
     cluster_seed.columns = ["cl", "seed_motif", "roffset", "s", "e", "N"]

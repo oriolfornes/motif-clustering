@@ -1,0 +1,5 @@
+motifs/Hughes/Autoseed_SmileSeq/GATA3.NA@SMS@stealthy-jade-skunk@AJolma.Autoseed@Multinom1_OneHitAllReads_Seed_NGATAA.ppm	CACGCC	+	6	2	3	1
+motifs/VIGG/SMS/GATA3.NA@SMS@stealthy-jade-skunk@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=2000.pcm	GTCACGCCACG	+	11	0	0	1
+motifs/VIGG/SMS/GATA3.NA@SMS@stealthy-jade-skunk@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=1000.pcm	GTCACGCCACG	+	11	0	0	1
+motifs/VIGG/SMS/GATA3.NA@SMS@stealthy-jade-skunk@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=500.pcm	GTCACGCCACG	-	11	0	0	1
+motifs/jangrau/SMS.published/GATA3.NA@SMS@stealthy-jade-skunk@Halle.Dimont@Motif_1_posneg_frompredictions.pcm	CACGCCAC	+	8	2	1	1

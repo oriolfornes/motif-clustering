@@ -1,0 +1,4 @@
+motifs/Hughes/SMSPublished/Homer/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Homer@homer1.ppm	AACGTGGCGT	+	10	4	1	2
+motifs/Hughes/SMSPublished/Streme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Streme@streme1.ppm	CGCCCACGTGGCGT	-	14	0	1	2
+motifs/Hughes/SMSPublished/Meme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Meme@meme1.ppm	TGGCGT	+	6	8	1	2
+motifs/jangrau/SMS.published/GATA3.NA@SMS@stealthy-jade-skunk@Halle.Dimont@Motif_1_posneg_astrained.ppm	GTGGCGTG	-	8	7	0	2

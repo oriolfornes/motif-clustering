@@ -1,0 +1,17 @@
+motifs	cluster
+motifs/Hughes/Autoseed_SmileSeq/GATA3.NA@SMS@stealthy-jade-skunk@AJolma.Autoseed@Multinom1_OneHitAllReads_Seed_NGATAA.ppm	2
+motifs/Hughes/SMSPublished/Homer/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Homer@homer1.ppm	4
+motifs/Hughes/SMSPublished/Homer/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Homer@homer2.ppm	5
+motifs/Hughes/SMSPublished/Homer/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Homer@homer3.ppm	6
+motifs/Hughes/SMSPublished/Meme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Meme@meme1.ppm	3
+motifs/Hughes/SMSPublished/Meme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Meme@meme2.ppm	9
+motifs/Hughes/SMSPublished/Meme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Meme@meme3.ppm	10
+motifs/Hughes/SMSPublished/Streme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Streme@streme1.ppm	4
+motifs/Hughes/SMSPublished/Streme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Streme@streme2.ppm	7
+motifs/Hughes/SMSPublished/Streme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Streme@streme3.ppm	8
+motifs/Hughes/SMSPublished/Streme/GATA3.NA@SMS@stealthy-jade-skunk@Hughes.Streme@streme4.ppm	11
+motifs/VIGG/SMS/GATA3.NA@SMS@stealthy-jade-skunk@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=1000.pcm	1
+motifs/VIGG/SMS/GATA3.NA@SMS@stealthy-jade-skunk@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=2000.pcm	1
+motifs/VIGG/SMS/GATA3.NA@SMS@stealthy-jade-skunk@autosome-ru.ChIPMunk@topk_k=5_cpm=100000_topk=500.pcm	1
+motifs/jangrau/SMS.published/GATA3.NA@SMS@stealthy-jade-skunk@Halle.Dimont@Motif_1_posneg_astrained.ppm	3
+motifs/jangrau/SMS.published/GATA3.NA@SMS@stealthy-jade-skunk@Halle.Dimont@Motif_1_posneg_frompredictions.pcm	1
