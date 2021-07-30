@@ -2,6 +2,8 @@
 
 import argparse
 from Bio import motifs
+from functools import partial
+from multiprocessing import Pool
 import os
 import pandas as pd
 import pathlib
@@ -18,6 +20,8 @@ parser = argparse.ArgumentParser(
 parser.add_argument("motifs_dir", type=pathlib.Path, help="motifs directory")
 parser.add_argument("--out-dir", type=pathlib.Path, default="./",
     help="output directory (default: ./)")
+parser.add_argument("--threads", type=int, default=1,
+    help="cpu threads to use (default: 1)")
 
 args = parser.parse_args()
 
@@ -41,21 +45,31 @@ for tf in tf2paths:
             record.name = tf
             tf2motifs[tf].append(record)
 
-for tf in tqdm(sorted(tf2motifs), total=len(tf2motifs), bar_format=bar_format):
-    tf_dir = os.path.join(args.out_dir, tf)
+def cluster_tf_motifs(tf, output_dir="./"):
+
+    # Create output dir
+    tf_dir = os.path.join(output_dir, tf)
     if not os.path.isdir(tf_dir):
         os.makedirs(tf_dir)
+
+    # Reformat TF motifs to MEME format
     meme_file = os.path.join(tf_dir, "motifs.meme")
     if not os.path.isfile(meme_file):
         reformat_motif(tf2motifs[tf], "meme", meme_file)
+
+    # Compute motif similarities using Tomtom
     tomtom_file = os.path.join(tf_dir, "tomtom.txt")
     if not os.path.isfile(tomtom_file):
         cmd = "tomtom -dist kullback -motif-pseudo 0.1 -text -min-overlap 1" +\
             f" {meme_file} {meme_file} > {tomtom_file}"
         sp.run([cmd], shell=True, stdout=sp.DEVNULL, stderr=sp.DEVNULL)
+
+    # Perform hierarchical clustering
     clusts_file = os.path.join(tf_dir, "clusters.0.70.txt")
     if not os.path.exists(clusts_file):
         utils.hierarchical(tomtom_file, tf_dir)
+
+    # Process and visualize clusters
     clusts_dir = os.path.join(tf_dir, "clusters.0.70")
     if not os.path.isdir(clusts_dir):
         os.makedirs(clusts_dir)
@@ -67,3 +81,10 @@ for tf in tqdm(sorted(tf2motifs), total=len(tf2motifs), bar_format=bar_format):
             clust_motifs = os.path.join(clusts_dir, f"cluster-motifs.{cl}.txt")
             utils.viz_cluster(meme_file, clust_seed, clust_motifs,
                 out_dir=clusts_dir)
+
+# Parallelize clustering
+kwargs = {"total": len(tf2motifs), "bar_format": bar_format}
+pool = Pool(args.threads)
+p = partial(cluster_tf_motifs, output_dir=args.out_dir)
+for _ in tqdm(pool.imap(p, sorted(tf2motifs)), **kwargs):
+    pass
