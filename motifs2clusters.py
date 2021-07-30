@@ -13,7 +13,7 @@ from jaspar2others import reformat_motif
 utils = __import__("jvierstra-py3")
 
 parser = argparse.ArgumentParser(
-    description="reformats motifs into MEME format (one file per TF).")
+    description="clusters motifs.")
 parser.add_argument("motifs_dir", type=pathlib.Path, help="motifs directory")
 parser.add_argument("--out-dir", type=pathlib.Path, default="./",
     help="output directory (default: ./)")
