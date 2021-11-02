@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import argparse
-from genome_tools.plotting import pwm
+from genome_tools import plotting
 import matplotlib
 import matplotlib.font_manager
 import matplotlib.pyplot as plt
@@ -95,8 +95,8 @@ def viz_cluster(meme_file, cluster_seed, cluster_motifs, prefix=None,
         offset = m["loffset"]
         strand = m["strand"]
 
-        pwm(pwms[m["id"]].T).render(fig, ax, type="ic", xoffset=offset,
-                xlim=(0-padding, right+padding), rc=True if strand=="-" else False)
+        plotting.pwm(pwms[m["id"]].T).render(fig, ax, type="ic", xoffset=offset,
+            xlim=(0-padding, right+padding), rc=True if strand=="-" else False)
 
         ax.axvline(s, color="black", ls='--')
         ax.axvline(e, color="black", ls='--')
